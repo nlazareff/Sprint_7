@@ -18,4 +18,5 @@ class CourierMethods:
     @staticmethod
     @allure.step('Удалить курьера по id')
     def delete_courier(courier_id):
-        return requests.delete(f'{Urls.URL_COURIER_DELETE}/{courier_id}')
+        url = Urls.URL_COURIER_DELETE.format(courier_id=courier_id)
+        return requests.delete(url=url)
